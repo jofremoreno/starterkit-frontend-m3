@@ -9,20 +9,25 @@ import { withAuth } from './Context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 
+import ApiWeather from './ApiWeather';
+import Home from './components/Home'
+
 class App extends Component {
   render() {
     const { handleLogout } = this.props;
     return (
       <>
-          <button onClick={handleLogout}>logout</button>
-          <Router>
-            <AnonRoute exact path="/login" component={Login} />
-            <AnonRoute exact path="/signup" component={Signup} />
-            <PrivateRoute exact path="/private" component={PrivateView} />
-          </Router>
+        <button onClick={handleLogout}>logout</button>
+        <Router>
+          <AnonRoute exact path="/" component={Home} />
+          <AnonRoute exact path="/login" component={Login} />
+          <AnonRoute exact path="/signup" component={Signup} />
+          <PrivateRoute exact path="/private" component={PrivateView} />
+        </Router>
       </>
     );
   }
 }
+
 
 export default withAuth(App);

@@ -19,18 +19,18 @@ class Signup extends Component {
       <div>
         <form onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange}/>
+          <input type="text" name="username" value={username} onChange={this.handleChange} />
           <label>Password:</label>
           <input type="password" name="password" value={password} onChange={this.handleChange} />
           <input type="submit" value="Signup" />
         </form>
 
-        <p>Already have account? 
-          <Link to={"/login"}> Login</Link>
+        <p>
+          Already have account?
+          <Link to={'/login'}> Login</Link>
         </p>
-
       </div>
-    )
+    );
   }
 }
 

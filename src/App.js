@@ -10,7 +10,11 @@ import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 
 import ApiWeather from './ApiWeather';
+
 import Home from './components/Home'
+import Geolocation from './components/Geolocation';
+import Search from './components/Search';
+import Favs from './components/Favs';
 
 class App extends Component {
   render() {
@@ -23,6 +27,8 @@ class App extends Component {
           <AnonRoute exact path="/login" component={Login} />
           <AnonRoute exact path="/signup" component={Signup} />
           <PrivateRoute exact path="/private" component={PrivateView} />
+          <PrivateRoute exact path="/geolocation" component={Geolocation} />
+          <PrivateRoute exact path="/search" component={Search} />
         </Router>
       </>
     );

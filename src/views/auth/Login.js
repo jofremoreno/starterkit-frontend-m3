@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { withAuth } from '../../Context/AuthContext';
 
 class Login extends Component {
@@ -17,7 +18,7 @@ class Login extends Component {
     const { username, password } = this.state;
     this.props.handleLogin({
       username,
-      password
+      password,
     })
   }
 
@@ -33,6 +34,7 @@ class Login extends Component {
         <input type="password" name="password" value={password} onChange={this.handleChange} />
         <input type="submit" value="Login" />
       </form>
+      <p>Create an account if you don't have'it <Link to={'/signup'}>Sign Up</Link></p>
       </div>
     )
   }

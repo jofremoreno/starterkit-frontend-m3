@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { withAuth } from '../../Context/AuthContext';
 
 class Signup extends Component {
-
   state = {
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   };
 
-  handleChange = (event) => {  
-    const {name, value} = event.target;
-    this.setState({[name]: value});
-  }
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
+  handleFormSubmit = e => {
+    e.preventDefault();
+    const { username, password } = this.state;
+    this.props.handleSignup({
+      username,
+      password,
+    });
+  };
 
   render() {
     const { username, password } = this.state;
@@ -34,4 +43,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withAuth(Signup);

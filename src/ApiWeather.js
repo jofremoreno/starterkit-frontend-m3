@@ -3,13 +3,18 @@ import axios from 'axios';
 class ApiWeather {
   constructor() {
     this.weather = axios.create({
-      baseURL: 'https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=process.env.API_WEATHER_KEY',
+      baseURL: 'https://api.openweathermap.org/data/2.5',
     });
   }
-  getBookById(id){
-    return this.axios.get(`/books/${id}`)
-      .then(({ data: book }) => book);
+
+  getCityName(name) {
+    return this.weather.get(`/weather?q=${name}&appid=76c66cb9ac84b481fdee2ba8c655b8c5`);
   }
+
+  getByCoords(lat, lon) {
+    return this.weather.get(`/weather?lat=${lat}lon=${lon}&appid=76c66cb9ac84b481fdee2ba8c655b8c5`);
+  }
+  
 }
 
-export default ApiWeather;
+export default new ApiWeather();

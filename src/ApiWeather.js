@@ -12,9 +12,8 @@ class ApiWeather {
   }
 
   getByCoords(lat, lon) {
-    return this.weather.get(`/weather?lat=${lat}lon=${lon}&appid=76c66cb9ac84b481fdee2ba8c655b8c5`);
+    return this.weather.get(`/weather?lat=${lat}&lon=${lon}&appid=76c66cb9ac84b481fdee2ba8c655b8c5`);
   }
-  
 }
 
 export default new ApiWeather();

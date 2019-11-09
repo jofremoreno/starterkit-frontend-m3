@@ -1,0 +1,23 @@
+body {
+  font-family: 'Comfortaa', cursive;
+  box-sizing: border-box;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(180deg, #7bccda 0%, rgba(255, 255, 255, 0) 100%), #c7518f;
+  align-content: center;
+
+  
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}

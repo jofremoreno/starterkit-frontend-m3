@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../../Context/AuthContext';
+import './signup.css';
 
 class Signup extends Component {
   state = {
@@ -25,14 +26,17 @@ class Signup extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange} />
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
-          <input type="submit" value="Signup" />
-        </form>
+      <div className="signup">
+        <div className="form">
+          <h1>Sign up:</h1>
+          <form onSubmit={this.handleFormSubmit}>
+            <label>Username:</label>
+            <input type="text" name="username" value={username} onChange={this.handleChange} />
+            <label>Password:</label>
+            <input type="password" name="password" value={password} onChange={this.handleChange} />
+            <input type="submit" value="Signup" />
+          </form>
+        </div>
 
         <p>
           Already have account?

@@ -39,7 +39,7 @@ class Geolocation extends Component {
   
   cel = temp => {
     const result = (temp - 273.15).toFixed(1) ;
-    return `hola Jofre -> ${result}Cº`;
+    return `${result}Cº`;
   };
 
   componentDidMount() {

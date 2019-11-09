@@ -38,7 +38,7 @@ class Geolocation extends Component {
 
   
   cel = temp => {
-    const result = (temp - 32) * 5/9;
+    const result = (temp - 273.15).toFixed(1) ;
     return `hola Jofre -> ${result}Cº`;
   };
 
@@ -48,16 +48,25 @@ class Geolocation extends Component {
   }
 
   render() {
-    console.log(this.state.coords);
+  
+    
     return (
       <div>
         <h1>El tiempo</h1>
-        {this.state.res
+        {/* {this.state.res
           ? `tiempo: ${this.state.res.data.name} - ${this.cel(this.state.res.data.main.temp)}`
-          : 'loading...'}
+          : 'loading...'} */}
         {this.state.coords
           ? `tiempo coords: ${this.state.coords.data.name} - ${this.cel(this.state.coords.data.main.temp)}`
           : 'loading...'}
+
+        {this.state.coords.data && 
+        <div>{this.state.coords.data.weather.map((datos, info)=>{
+          return <div key={`${info}`}>{`${datos.main} ${datos.description} ${datos.icon} `}</div>;
+        })}</div>}
+        {!this.state.coords.data && <div>Loading...</div>}
+        
+        
       </div>
     );
   }

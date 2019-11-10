@@ -5,19 +5,46 @@ body {
 
 .signup {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0px;
   top: 0px;
   background: linear-gradient(180deg, #7bccda 0%, rgba(255, 255, 255, 0) 100%), #c7518f;
-  align-content: center;
-
-  
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.inputs-form {
+  width: 80%;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  border-radius: 5px;
+  margin: 30px 0;
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  border-right-width: 0px;
+  padding-left: 0px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  font-size: medium;
+}
+
+.input-submit {
+  background: #254a5d;
+  color: white;
+  font-size: larger;
 }

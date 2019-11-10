@@ -15,6 +15,10 @@ import Home from './components/Home'
 import Geolocation from './components/Geolocation';
 import Search from './components/Search';
 import Favs from './components/Favs';
+import Messages from './components/Messages';
+import Profile from './components/Profile';
+
+
 
 class App extends Component {
   render() {
@@ -29,6 +33,9 @@ class App extends Component {
           <PrivateRoute exact path="/private" component={PrivateView} />
           <PrivateRoute exact path="/geolocation" component={Geolocation} />
           <PrivateRoute exact path="/search" component={Search} />
+          <PrivateRoute exact path="/favs" component={Favs} />
+          <PrivateRoute exact path="/messages" component={Messages} />
+          <PrivateRoute exact path="/profile" component={Profile} />
         </Router>
       </>
     );

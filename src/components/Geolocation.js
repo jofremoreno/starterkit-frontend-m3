@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
 import ApiWeather from '../ApiWeather';
+import NavBar from './NavBar';
+import './geolocation.css';
+import './navbar.css'
 
 class Geolocation extends Component {
   state = {
@@ -34,9 +38,6 @@ class Geolocation extends Component {
     );
   }
 
-
-
-  
   cel = temp => {
     const result = (temp - 273.15).toFixed(1) ;
     return `${result}Cº`;
@@ -48,25 +49,26 @@ class Geolocation extends Component {
   }
 
   render() {
-  
     
     return (
-      <div>
-        <h1>El tiempo</h1>
+      <div className="geolocation-main">
+        <h1>Weathever</h1>
         {/* {this.state.res
           ? `tiempo: ${this.state.res.data.name} - ${this.cel(this.state.res.data.main.temp)}`
           : 'loading...'} */}
         {this.state.coords
-          ? `tiempo coords: ${this.state.coords.data.name} - ${this.cel(this.state.coords.data.main.temp)}`
+          ? `${this.state.coords.data.name} - ${this.cel(this.state.coords.data.main.temp)}`
           : 'loading...'}
 
-        {this.state.coords.data && 
-        <div>{this.state.coords.data.weather.map((datos, info)=>{
-          return <div key={`${info}`}>{`${datos.main} ${datos.description} ${datos.icon} `}</div>;
-        })}</div>}
+        {this.state.coords.data && (
+          <div>
+            {this.state.coords.data.weather.map((datos, info) => {
+              return <div key={`${info}`}>{`${datos.main} ${datos.description} ${datos.icon} `}</div>;
+            })}
+          </div>
+        )}
         {!this.state.coords.data && <div>Loading...</div>}
-        
-        
+          <NavBar>{NavBar}</NavBar>
       </div>
     );
   }

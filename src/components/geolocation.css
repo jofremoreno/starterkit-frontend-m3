@@ -1,0 +1,17 @@
+body {
+  font-family: 'Comfortaa', cursive;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #254A5D;
+}
+
+.geolocation-main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: #dac57b;
+}

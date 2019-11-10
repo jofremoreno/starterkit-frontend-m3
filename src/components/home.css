@@ -14,10 +14,6 @@ body {
   align-items: flex-end;
 }
 
-/* .logo {
-  width: 100%;
-} */
-
 .registerButons {
   display: flex;
   justify-content: space-evenly;
@@ -25,7 +21,6 @@ body {
   background: white;
   height: 80px;
   width: 100%;
-  /* margin-top: 656px; */
 }
 
 .auth-button {

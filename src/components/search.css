@@ -1,6 +1,8 @@
 body {
   font-family: 'Comfortaa', cursive;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0%;
 }
 
 h1 {
@@ -22,4 +24,6 @@ width: 80%;
 left: 0%;
 right: 0%;
 border: 2px solid #254A5D;
+box-sizing: border-box;
+  padding-left: 10px;
 }

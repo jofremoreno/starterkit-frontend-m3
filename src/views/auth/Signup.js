@@ -31,8 +31,8 @@ class Signup extends Component {
           <h1>Sign up:</h1>
           <div className="inputs-form">
             <form onSubmit={this.handleFormSubmit}>
-              <input type="text" name="username" placeholder="  User" value={username} onChange={this.handleChange} />
-              <input type="password" name="password" placeholder="  Password" value={password} onChange={this.handleChange} />
+              <input type="text" name="username" placeholder="User" value={username} onChange={this.handleChange} />
+              <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} />
               <input className="input-submit" type="submit" value="Signup" />
             </form>
           </div>

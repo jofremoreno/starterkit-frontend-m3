@@ -5,7 +5,7 @@ import './navbar.css';
 class Favs extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Favorites:</h1>
         <NavBar>{NavBar}</NavBar>
       </div>

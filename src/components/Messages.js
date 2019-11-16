@@ -5,7 +5,7 @@ import './navbar.css';
 class Messages extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Messages:</h1>
         <NavBar>{NavBar}</NavBar>
       </div>

@@ -1,0 +1,42 @@
+body {
+  font-family: 'Comfortaa', cursive;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0%;
+}
+
+.container.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+}
+
+.image-profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+}
+
+.name-profile {
+font-size: 40px;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 48px;
+  border-radius: 5px;
+  background: #254a5d;
+  color: #ffffff;
+  margin-bottom: 200px;
+}
+
+button {
+  color: white;
+  font-size: large;
+}

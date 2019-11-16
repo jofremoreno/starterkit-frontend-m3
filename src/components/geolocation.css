@@ -6,14 +6,30 @@ body {
 }
 
 h1 {
-  color: #254A5D;
+  color: #254a5d;
 }
 
-.geolocation-main {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0px;
-  top: 0px;
+/* .geolocation-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 100vh;
   background: #dac57b;
+} */
+
+.geolocation-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  font-size: 27px;
+  color: white;
+  margin-bottom: 200px;
+}
+
+.weather-icons {
+  width: 100%;
+  height: 200px;
 }

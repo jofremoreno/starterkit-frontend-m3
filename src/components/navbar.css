@@ -20,6 +20,10 @@ body {
   height: 30px;
 }
 
+.nav-message {
+  width: 60px;
+}
+
 ul {
   display: flex;
   align-items: center;

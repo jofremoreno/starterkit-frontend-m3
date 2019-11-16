@@ -1,9 +1,11 @@
+/* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import ApiWeather from '../ApiWeather';
 import NavBar from './NavBar';
+
 import './geolocation.css';
-import './navbar.css'
+import './backgroundcolor.css';
+import './navbar.css';
 
 class Geolocation extends Component {
   state = {
@@ -38,37 +40,70 @@ class Geolocation extends Component {
     );
   }
 
-  cel = temp => {
-    const result = (temp - 273.15).toFixed(1) ;
-    return `${result}Cº`;
+  cel = (temp, cel) => {
+    const result = (temp - 273.15).toFixed(1);
+    return !cel ? `${result}Cº` : parseInt(result, 0);
   };
 
+  getBackground = () => {
+    if (this.state.coords) {
+      const { temp } = this.state.coords.data.main;
+      const formatTemp = this.cel(temp, true);
+      console.log('background', this.cel(temp, true));
+      return formatTemp > 35
+        ? 'background-color-red'
+        : formatTemp > 30
+        ? 'background-color-orange'
+        : formatTemp > 25
+        ? 'background-color-yellow'
+        : formatTemp > 20
+        ? 'background-color-green'
+        : formatTemp > 15
+        ? 'background-color-aqua'
+        : formatTemp > 10
+        ? 'background-color-blue'
+        : formatTemp > 5
+        ? 'background-color-violet'
+        : formatTemp > 0
+        ? 'background-color-pink'
+        : 'background-color-white';
+    }
+    return 'background-color-default';
+  };
+  
   componentDidMount() {
-    this.getWeatherName('Madrid');
+    // this.getWeatherName('Madrid');
     navigator.geolocation.getCurrentPosition(this.showPosition.bind(this));
   }
 
-  render() {
-    
-    return (
-      <div className="geolocation-main">
-        <h1>Weathever</h1>
-        {/* {this.state.res
-          ? `tiempo: ${this.state.res.data.name} - ${this.cel(this.state.res.data.main.temp)}`
-          : 'loading...'} */}
-        {this.state.coords
-          ? `${this.state.coords.data.name} - ${this.cel(this.state.coords.data.main.temp)}`
-          : 'loading...'}
 
-        {this.state.coords.data && (
-          <div>
-            {this.state.coords.data.weather.map((datos, info) => {
-              return <div key={`${info}`}>{`${datos.main} ${datos.description} ${datos.icon} `}</div>;
-            })}
-          </div>
-        )}
-        {!this.state.coords.data && <div>Loading...</div>}
-          <NavBar>{NavBar}</NavBar>
+  render() {
+    return (
+      <div id= "background" className= {this.getBackground()}>
+        <h1>Weathever</h1>
+        <div className="geolocation-data">
+          {this.state.coords
+            ? `${this.state.coords.data.name} ${this.cel(this.state.coords.data.main.temp)}`
+            : 'loading...'}
+          {this.state.coords.data && (
+            <div>
+              <div>
+                <img
+                  className="weather-icons"
+                  src={`./img/${this.state.coords.data.weather[0].icon}.svg`}
+                  alt="weather"
+                />
+              </div>
+              {this.state.coords.data.weather.map((datos, info) => {
+                return <div key={`${info}`}>{`${datos.main} `}</div>;
+                // ${datos.description} ${datos.icon}
+              })}
+            </div>
+          )}
+          {!this.state.coords.data && <div>Loading...</div>}
+        </div>
+
+        <NavBar>{NavBar}</NavBar>
       </div>
     );
   }

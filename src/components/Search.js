@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ApiWeather from '../ApiWeather';
 import './search.css';
+import ChromaticVar from './ChromaticVar';
 import NavBar from './NavBar';
 import './navbar.css';
 
@@ -81,6 +82,7 @@ class Search extends Component {
         ) : (
           <div>zona no encontrada</div>
         )}
+        <ChromaticVar></ChromaticVar>
         <NavBar>{NavBar}</NavBar>
       </div>
     );

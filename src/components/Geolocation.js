@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ApiWeather from '../ApiWeather';
 import NavBar from './NavBar';
+import ChromaticVar from './ChromaticVar'
 
 import './geolocation.css';
 import './backgroundcolor.css';
@@ -79,7 +80,7 @@ class Geolocation extends Component {
 
   render() {
     return (
-      <div id= "background" className= {this.getBackground()}>
+      <div id="background" className={this.getBackground()}>
         <h1>Weathever</h1>
         <div className="geolocation-data">
           {this.state.coords
@@ -102,7 +103,7 @@ class Geolocation extends Component {
           )}
           {!this.state.coords.data && <div>Loading...</div>}
         </div>
-
+        <ChromaticVar></ChromaticVar>
         <NavBar>{NavBar}</NavBar>
       </div>
     );

@@ -1,0 +1,15 @@
+.chromatic-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  bottom: 79px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: white;
+}
+
+.chromatic-var {
+  height: 20px;
+}

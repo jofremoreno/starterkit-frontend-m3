@@ -31,33 +31,40 @@ input {
 }
 
 .background-color-red {
-  background: #D47B7B;
+  /* background: #d47b7b; */
+  background: linear-gradient(180deg, #d47b7b 0%, rgba(255, 255, 255, 0) 100%), #bc7bda;
 }
 
 .background-color-orange {
-  background: #C77B51;
+  /* background: #C77B51; */
+  background: linear-gradient(180deg, #c77b51 0%, rgba(255, 255, 255, 0) 100%), #d47b7b;
 }
 
 .background-color-yellow {
-  background: #DAC57B;
+  /* background: #DAC57B; */
+  background: linear-gradient(180deg, #dac57b 0%, rgba(255, 255, 255, 0) 100%), #c77b51;
 }
 
 .background-color-green {
-  background: #A5DA7B;
+  /* background: #A5DA7B; */
+  background: linear-gradient(180deg, #a5da7b 0%, rgba(255, 255, 255, 0) 100%), #a5da7b;
 }
 
 .background-color-aqua {
-  background: #7BCCD4;
+  /* background: #7BCCD4; */
+  background: linear-gradient(180deg, #7bccd4 0%, rgba(255, 255, 255, 0) 100%), #a5da7b;
 }
 
 .background-color-blue {
-  background: #51B9C7;
+  /* background: #51B9C7; */
+  background: linear-gradient(180deg, #51b9c7 0%, rgba(255, 255, 255, 0) 100%), #00a2ff;
 }
 
 .background-color-violet {
-  background: #BC7BDA;
+  /* background: #BC7BDA; */
+  background: linear-gradient(180deg, #bc7bda 0%, rgba(255, 255, 255, 0) 100%), #d47b7b;
 }
 
 .background-color-pink {
-  background: #D87BDA;
+  background: #d87bda;
 }

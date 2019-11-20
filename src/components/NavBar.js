@@ -21,11 +21,11 @@ const NavBarInferior = () => {
             <img src={SearchIcon} className="nav-icons" alt="geolocation-icon"></img>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to={'./messages'} className="link-decorate">
             <img src={MessageIcon} className="nav-icons nav-message" alt="geolocation-icon"></img>
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to={'./favs'} className="link-decorate">
             <img src={FavsIcon} className="nav-icons" alt="geolocation-icon"></img>

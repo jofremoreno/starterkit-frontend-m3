@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import ApiWeather from '../ApiWeather';
 import NavBar from './NavBar';
-import ChromaticVar from './ChromaticVar'
+import ChromaticVar from './ChromaticVar';
 
 import './geolocation.css';
 import './backgroundcolor.css';
@@ -71,12 +71,11 @@ class Geolocation extends Component {
     }
     return 'background-color-default';
   };
-  
+
   componentDidMount() {
     // this.getWeatherName('Madrid');
     navigator.geolocation.getCurrentPosition(this.showPosition.bind(this));
   }
-
 
   render() {
     return (

@@ -12,3 +12,16 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+.fav-list {
+  display: flex;
+  flex-direction: column;  
+  width: 70%;
+}
+
+.temp-text {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #254a5d;
+  padding: 5px;
+}
